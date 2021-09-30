@@ -130,9 +130,10 @@ module ViewComponent
         end
       end
 
-      app.executor.to_run :before do
-        CompileCache.invalidate! unless ActionView::Base.cache_template_loading
-      end
+      # TODO: move this to a separate middleware
+      # app.executor.to_run :before do
+      #   CompileCache.invalidate! unless ActionView::Base.cache_template_loading
+      # end
     end
   end
 end
